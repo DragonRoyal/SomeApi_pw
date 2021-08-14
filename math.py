@@ -18,16 +18,6 @@ def np(str):
     time.sleep(0.1)
   sys.stdout.write("\n")
   
-
-
-
-# np("You Woke up in a strange place")5
-# np("....")
-
-# np("You look around and see yourself trapped in a room")
-
-# np('All of a sudden the tv turned on and a strange man said "you have a hour to escape this room or else you will rot here",')
-
 def add(num):
     
     numX=num.split("+")
