@@ -1,1 +1,1 @@
-from someapi import *
+from someapi_wrapper.someapi import *
