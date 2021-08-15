@@ -9,7 +9,4 @@ to import the package to your code!
 
 
 # Examples
-  # Discord.py Ex:
-   `import discord
-    from discord.ext import commands
-    `
+
