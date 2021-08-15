@@ -1,19 +1,24 @@
 import aiohttp
 import asyncio
 class Images:
-    async def dog(self):
+    def __init__(self):
+        pass
+    async def dog():
         return "https://someapi.xyz/dog/image"
 
 class Json:
-
+    def __init__(self):
+        pass
     async def dog():
         async with aiohttp.ClientSession() as cs:
             async with cs.get("https://someapi.xyz/json/dogs") as r:
             
                 data = await r.json()
-        print(data["fact"])
+       
         return data["fact"]
-    async def quote(amogus):
+    async def quote(amogus=None):
+        if amogus==None:
+            amogus=="amogus cool"
 
         async with aiohttp.ClientSession() as cs:
             async with cs.get("https://someapi.xyz/json/quote") as r:
@@ -32,6 +37,8 @@ class Json:
                 data = await r.json()
         return data["text"]
 class Canvas:
+    def __init__(self):
+        pass
     async def invert(avatar):
         return f"https://someapi.xyz/invert?avatar={avatar}"
 
@@ -62,19 +69,5 @@ class Canvas:
     async def hitler(avatar):
         return f"https://someapi.xyz/hitler?avatar={avatar}"
 
-def hitler1(avatar):
-    print(f"https://someapi.xyz/hitler?avatar={avatar}")
-    return f"https://someapi.xyz/hitler?avatar={avatar}"
-   
-    
-        
-
-    # loop = asyncio.get_event_loop()
-    # tasks = [
-    #     loop.create_task(Canvas.alert("hello+guys")),
-        
-    # ]
-    # loop.run_until_complete(asyncio.wait(tasks))
-    # loop.close()
 
 
