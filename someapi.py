@@ -7,7 +7,7 @@ class Images:
     def __init__(self):
         pass
     async def dog():
-        return "https://someapi.xyz/dog/image"
+        return "https://someapi.xyz/image/dog"
 
 class Json:
     def __init__(self):
