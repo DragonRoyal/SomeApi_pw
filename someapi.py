@@ -1,8 +1,6 @@
 import aiohttp
 import asyncio
-from outdated import warn_if_outdated
 
-warn_if_outdated('someapi_wrapper', '0.4')
 class Images:
     def __init__(self):
         pass
