@@ -1,5 +1,8 @@
 import aiohttp
 import asyncio
+from outdated import warn_if_outdated
+
+warn_if_outdated('someapi_wrapper', '0.4')
 class Images:
     def __init__(self):
         pass
@@ -17,22 +20,31 @@ class Json:
        
         return data["fact"]
     async def quote(amogus=None):
-        if amogus==None:
-            amogus=="amogus cool"
+        try:
+            if amogus==None:
+                amogus=="amogus cool"
 
-        async with aiohttp.ClientSession() as cs:
-            async with cs.get("https://someapi.xyz/json/quote") as r:
-            
-                data = await r.json()
-        if amogus=="author":
-            return data["author"]
-            
-        else:
-            return data["quote"]
-            
+            async with aiohttp.ClientSession() as cs:
+                async with cs.get("https://someapi.xyz/json/quote") as r:
+                
+                    data = await r.json()
+            if amogus=="author":
+                return data["author"]
+                
+            else:
+                return data["quote"]
+        except:
+            return "Website may be down or you used the function wrongly"
+                
     async def mocktext(text):
         async with aiohttp.ClientSession() as cs:
             async with cs.get(f"https://someapi.xyz/mocktext?text={text}") as r:
+            
+                data = await r.json()
+        return data["text"]
+    async def chatbot(text,apikey):
+        async with aiohttp.ClientSession() as cs:
+            async with cs.get(f"https://someapi.xyz/premuim/chatbot?code={apikey}&text={text}") as r:
             
                 data = await r.json()
         return data["text"]
@@ -40,7 +52,8 @@ class Canvas:
     def __init__(self):
         pass
     async def invert(avatar):
-        return f"https://someapi.xyz/invert?avatar={avatar}"
+            return f"https://someapi.xyz/invert?avatar={avatar}"
+       
 
     async def greyscale(avatar):
         return f"https://someapi.xyz/greyscale?avatar={avatar}"
@@ -68,6 +81,3 @@ class Canvas:
 
     async def hitler(avatar):
         return f"https://someapi.xyz/hitler?avatar={avatar}"
-
-
-
